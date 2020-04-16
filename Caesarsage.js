@@ -1,9 +1,25 @@
 var mongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/mydb';
+var assert = require('assert');
+var insertDocument = require('./interns');
+var findDocument = require('./findinterns');
+var updateDocument = require('./updateInterns');
+
+//Connection URL
+var url = 'mongodb://localhost:27017';
+
+//Create new Mongoclient
+var client = new mongoClient(url);
+
+//Name OF DB
 var name ='Caesarsage'
 
-mongoClient.connect(url,function (err,db){
-    if (err) throw err;
-        console.log('Database created by ' + name);
-        db.close();    
+client.connect(function(err){
+    assert.equal(err, null);
+    console.log('Database created by ' + name );
+
+    var db = client.db(name);
+
+    updateDocument(db,function () {
+        client.close();     
+    });
 });

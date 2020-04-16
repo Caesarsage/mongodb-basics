@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-task2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Caesarsage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caesarsage/mongodb-basics.git"
+  },
+  "author": "Caesarsage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caesarsage/mongodb-basics/issues"
+  },
+  "homepage": "https://github.com/Caesarsage/mongodb-basics#readme",
+  "dependencies": {
+    "mongodb": "^3.5.5"
+  }
+}
